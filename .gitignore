@@ -11,3 +11,4 @@
 */*/msbuild.log
 */*/msbuild.err
 */*/msbuild.wrn
+*.cache
