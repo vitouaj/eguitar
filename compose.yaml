@@ -1,0 +1,26 @@
+
+services:
+  product.api:
+    build:
+      context: .
+      dockerfile: product.api/Dockerfile
+      target: final
+    ports:
+      - 5224:5224
+
+  order.api:
+    build:
+      context: .
+      dockerfile: order.api/Dockerfile
+      target: final
+    ports:
+      - 5225:5225
+  
+  gateway.api:
+    build:
+      context: .
+      dockerfile: gateway.api/Dockerfile
+      target: final
+    ports:
+      - 5226:5226
+
