@@ -460,27 +460,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hunvi\\.nuget\\packages\\": {}
+    "/Users/user/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Project 2023\\Server Applications\\microservices\\eguitar\\product.api\\product.api.csproj",
+      "projectUniqueName": "/Users/user/Documents/hunvitou/docker101/eguitar/product.api/product.api.csproj",
       "projectName": "product.api",
-      "projectPath": "E:\\Projects\\Project 2023\\Server Applications\\microservices\\eguitar\\product.api\\product.api.csproj",
-      "packagesPath": "C:\\Users\\hunvi\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Project 2023\\Server Applications\\microservices\\eguitar\\product.api\\obj\\",
+      "projectPath": "/Users/user/Documents/hunvitou/docker101/eguitar/product.api/product.api.csproj",
+      "packagesPath": "/Users/user/.nuget/packages/",
+      "outputPath": "/Users/user/Documents/hunvitou/docker101/eguitar/product.api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hunvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -527,7 +524,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
