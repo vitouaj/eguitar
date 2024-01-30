@@ -42,6 +42,46 @@
       }
     },
     {
+      "name": ".NET Core Launch (user)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "builduser",
+      "program": "${workspaceFolder}/user.api/bin/Debug/net8.0/user.api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/user.api",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": ".NET Core Launch (email)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "buildemail",
+      "program": "${workspaceFolder}/email.api/bin/Debug/net8.0/email.api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/email.api",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
       "name": ".NET Core Attach",
       "type": "coreclr",
       "request": "attach"
@@ -61,7 +101,9 @@
       "name": "Product & Order Services",
       "configurations": [
         ".NET Core Launch (product)",
-        ".NET Core Launch (order)"
+        ".NET Core Launch (order)",
+        ".NET Core Launch (email)",
+        ".NET Core Launch (user)"
       ],
       "stopAll": true
     }

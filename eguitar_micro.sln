@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway.api", "gateway.api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedMessages", "SharedMessages\SharedMessages.csproj", "{CDBA8848-0A6D-492E-B87B-2080C0B4854B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "user.api", "user.api\user.api.csproj", "{ACFC722F-5C7D-4EBC-8865-AEBDD21CE987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "email.api", "email.api\email.api.csproj", "{ABCD8C04-921C-4C3D-B42E-3757D4CA84BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFC722F-5C7D-4EBC-8865-AEBDD21CE987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFC722F-5C7D-4EBC-8865-AEBDD21CE987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFC722F-5C7D-4EBC-8865-AEBDD21CE987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFC722F-5C7D-4EBC-8865-AEBDD21CE987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABCD8C04-921C-4C3D-B42E-3757D4CA84BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCD8C04-921C-4C3D-B42E-3757D4CA84BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCD8C04-921C-4C3D-B42E-3757D4CA84BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCD8C04-921C-4C3D-B42E-3757D4CA84BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
