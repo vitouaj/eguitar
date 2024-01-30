@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "order.api", "order.api\orde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gateway.api", "gateway.api\gateway.api.csproj", "{74185179-1433-4747-BDE9-1EFCE2646F6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedMessages", "SharedMessages\SharedMessages.csproj", "{CDBA8848-0A6D-492E-B87B-2080C0B4854B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{74185179-1433-4747-BDE9-1EFCE2646F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74185179-1433-4747-BDE9-1EFCE2646F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74185179-1433-4747-BDE9-1EFCE2646F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBA8848-0A6D-492E-B87B-2080C0B4854B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
