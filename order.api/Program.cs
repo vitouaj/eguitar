@@ -9,9 +9,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddMassTransit(ms =>
+builder.Services.AddMassTransit(busconfig =>
 {
-    ms.UsingRabbitMq();
+    busconfig.SetKebabCaseEndpointNameFormatter();
+    busconfig.UsingRabbitMq((context, cfg) => {
+        cfg.Host(new Uri(builder.Configuration["MessageBroker:Host"]!), h =>{
+            h.Username(builder.Configuration["MessageBroker:Username"]);
+            h.Password(builder.Configuration["MessageBroker:Password"]);
+        });
+        cfg.ConfigureEndpoints(context);
+    });
 });
 
 

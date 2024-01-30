@@ -14,7 +14,7 @@ public class OrderCreatedConsumer : IConsumer<IOrderCreated>
     {
         // This message could be store in a database
         // Or perform any task that is required in the project
-        var message = "Order " + context.Message.OrderId + "at " + context.Message.OrderDate;
+        var message = "Order " + context.Message.OrderId + " at " + context.Message.OrderDate;
         _logger.LogInformation(message);
         await Task.CompletedTask;
     }

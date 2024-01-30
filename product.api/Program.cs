@@ -1,5 +1,4 @@
 using MassTransit;
-using Microsoft.VisualBasic;
 using product.api;
 using SharedMessages;
 
@@ -8,24 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddMassTransit(m =>
+builder.Services.AddMassTransit(busconfig =>
 {
-    m.AddConsumer<OrderCreatedConsumer>();
+    busconfig.SetKebabCaseEndpointNameFormatter();
 
-    m.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
-    {
-        cfg.Host(new Uri("rabbitmq://localhost"), h =>
-        {
-            h.Username("guest");
-            h.Password("guest");
+    busconfig.AddConsumer<OrderCreatedConsumer>();
+
+    busconfig.UsingRabbitMq((context, cfg) => {
+        cfg.Host(new Uri(builder.Configuration["MessageBroker:Host"]!), h =>{
+            h.Username(builder.Configuration["MessageBroker:Username"]);
+            h.Password(builder.Configuration["MessageBroker:Password"]);
         });
-        cfg.ReceiveEndpoint("order-create", ep =>
-        {
-            ep.PrefetchCount = 16;
-            ep.UseMessageRetry(r => r.Interval(2, 100));
-            ep.ConfigureConsumer<OrderCreatedConsumer>(provider);
-        });
-    }));
+        cfg.ConfigureEndpoints(context);
+    });
 });
 
 var app = builder.Build();

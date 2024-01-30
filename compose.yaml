@@ -1,51 +1,56 @@
 services:
-  rabbitmq:
-    image: rabbitmq:3.11-management
+  eguitar-mq:
+    image: rabbitmq:management
+    container_name: eguitar.RabbitMq
+    hostname: order-mq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
     ports:
       - 15672:15672
       - 5672:5672
     networks:
       - proxyInternal
 
-  product.api:
-    build:
-      context: .
-      dockerfile: product.api/Dockerfile
-      target: final
-    ports:
-      - 5001:5224
-      - 5009:5334
-    networks:
-      - proxyInternal
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+  # product.api:
+  #   build:
+  #     context: .
+  #     dockerfile: product.api/Dockerfile
+  #     target: final
+  #   ports:
+  #     - 5001:5224
+  #     - 5009:5334
+  #   networks:
+  #     - proxyInternal
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
 
-  order.api:
-    build:
-      context: .
-      dockerfile: order.api/Dockerfile
-      target: final
-    ports:
-      - 5002:5225
-      - 5008:5335
+  # order.api:
+  #   build:
+  #     context: .
+  #     dockerfile: order.api/Dockerfile
+  #     target: final
+  #   ports:
+  #     - 5002:5225
+  #     - 5008:5335
 
-    networks:
-      - proxyInternal
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+  #   networks:
+  #     - proxyInternal
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
 
-  gateway.api:
-    build:
-      context: .
-      dockerfile: gateway.api/Dockerfile
-      target: final
-    ports:
-      - 5000:5226
-      - 5010:5336
+  # gateway.api:
+  #   build:
+  #     context: .
+  #     dockerfile: gateway.api/Dockerfile
+  #     target: final
+  #   ports:
+  #     - 5000:5226
+  #     - 5010:5336
 
-    networks:
-      - proxyInternal
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+  #   networks:
+  #     - proxyInternal
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
 networks:
   proxyInternal:
