@@ -10,8 +10,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMassTransit(busconfig =>
 {
     busconfig.SetKebabCaseEndpointNameFormatter();
-    busconfig.UsingRabbitMq((context, cfg) => {
-        cfg.Host(new Uri(builder.Configuration["MessageBroker:Host"]!), h =>{
+    busconfig.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host(new Uri(builder.Configuration["MessageBroker:Host"]!), h =>
+        {
             h.Username(builder.Configuration["MessageBroker:Username"]);
             h.Password(builder.Configuration["MessageBroker:Password"]);
         });
@@ -31,8 +33,8 @@ app.UseHttpsRedirection();
 
 List<User> users = [];
 
-app.MapPost("/register", async (UserDto userDto, IPublishEndpoint publishEndpoint) => {
-
+app.MapPost("/register", async (UserDto userDto, IPublishEndpoint publishEndpoint) =>
+{
     var u = new User
     {
         Id = Guid.NewGuid().ToString(),
@@ -45,7 +47,8 @@ app.MapPost("/register", async (UserDto userDto, IPublishEndpoint publishEndpoin
     users.Add(u);
 
     // email to this new user
-    await publishEndpoint.Publish(new UserRegisterEvent {
+    await publishEndpoint.Publish(new UserRegisterEvent
+    {
         UserId = u.Id,
         Email = u.Email,
         CreatedAt = u.CreatedAt
@@ -55,11 +58,12 @@ app.MapPost("/register", async (UserDto userDto, IPublishEndpoint publishEndpoin
 });
 
 
-app.MapPost("/login", (string email, string password)=> {
+app.MapPost("/login", (string email, string password) =>
+{
     var u = users.Where(u => u.Email == email & u.Password == password).Any();
     if (!u)
         return Results.BadRequest("login failed");
     return Results.Ok("success");
 });
- 
+
 app.Run();
